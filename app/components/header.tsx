@@ -11,7 +11,7 @@ export default function Header(){
             <div className="flex gap-15 items-center text-[15px] text-black font-mono">
                 <span>HOME</span>
                 <span>ABOUT</span>
-                <button className="py-3 px-4 bg-[#808CFD] hover:bg-[#7C88FF] rounded-lg">RESERVE YOUR SPOT</button>
+                <button className="py-3 px-4 bg-[#808CFD] hover:bg-black hover:text-white transition-colors duration-300 rounded-lg">RESERVE YOUR SPOT</button>
             </div>
         </div>
     )
