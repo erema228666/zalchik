@@ -6,7 +6,6 @@ import { Anek_Tamil } from 'next/font/google';
 
 const anekTamil = Anek_Tamil({
   subsets: ['latin'],
-  weight: ['800'],
   variable: '--font-anek-tamil',
 });
 

@@ -16,7 +16,7 @@ export default function TrainHard() {
             <Image src={zal1} alt=""/>
           </div>
           <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between">
-            <h2 className="font-anek-tamil text-[45px] leading-[95%] tracking-[-0.03em]">
+            <h2 className="font-anek-tamil text-[45px] leading-[95%] tracking-[-0.03em] font-bold">
               FOR THE COMMITTED
             </h2>
             <div className="font-sans flex flex-col gap-5 text-sm">
@@ -38,7 +38,7 @@ export default function TrainHard() {
         </div>
         <div className="grid grid-cols-3">
           <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b border-black border-r">
-            <h2 className="font-anek-tamil text-[44px] leading-[95%] tracking-[-0.03em] ">
+            <h2 className="font-anek-tamil text-[44px] leading-[95%] tracking-[-0.03em] font-bold">
               GUIDED BY EXPERTS
             </h2>
             <p className="font-sans flex flex-col gap-5 text-sm">
@@ -47,8 +47,8 @@ export default function TrainHard() {
               full potential.
             </p>
           </div>
-          <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b bprder-black">
-            <h2 className="font-anek-tamil text-[44px] leading-[95%] tracking-[-0.03em]">
+          <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b border-black">
+            <h2 className="font-anek-tamil text-[44px] leading-[95%] tracking-[-0.03em] font-bold">
               DYNAMIC OPEN GYM
             </h2>
             <p className="font-sans flex flex-col gap-5 text-sm">
