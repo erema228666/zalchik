@@ -2,6 +2,13 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
+import { Anek_Tamil } from 'next/font/google';
+
+const anekTamil = Anek_Tamil({
+  subsets: ['latin'],
+  weight: ['800'],
+  variable: '--font-anek-tamil',
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,12 +33,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${anekTamil.variable}  h-full antialiased`}
     >
       <body className="flex flex-col">
         <Header/>
         <div className="flex justify-center w-full">
-          <div className="w-full max-w-7xl px-4">
+          <div className="w-full max-w-7xl">
             {children}
           </div>
         </div>

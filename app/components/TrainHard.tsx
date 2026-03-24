@@ -1,8 +1,10 @@
 import Image from 'next/image';
+import zal1 from '../../public/zal1.svg'
+import zal2 from '../../public/zal2.svg'
 export default function TrainHard() {
   return (
     <div>
-      <div className="flex bg-white text-7xl font-extrabold py-8 border-b justify-center border-b-black">
+      <div className="flex bg-white font-anek-tamil font-extrabold text-[116px] leading-[110%] tracking-[-0.05em] uppercase py-8 border-b justify-center border-b-black">
         <h1 className="text-black">
           TRAIN HARD. <span className="text-[#808dfd]">LIVE BETTER</span>
         </h1>
@@ -11,21 +13,21 @@ export default function TrainHard() {
       <div>
         <div className="grid grid-cols-3">
           <div className="col-span-2">
-            <Image src={'zal1.svg'} alt="" width={854} height={480} />
+            <Image src={zal1} alt=""/>
           </div>
           <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between">
-            <h2 className="font-sans text-3xl font-bold max-w-2xs mb-">
-              FOR THE COMMITED
+            <h2 className="font-anek-tamil text-[45px] leading-[95%] tracking-[-0.03em]">
+              FOR THE COMMITTED
             </h2>
             <div className="font-sans flex flex-col gap-5 text-sm">
               <p>
                 Train like an athlete with top-tier equipment and expert
-                programming. Whether you're building muscle or breaking PRs, we
+                programming. Whether you&apos;re building muscle or breaking PRs, we
                 help you push past limits. Train like an athlete with top-tier
-                equipment and expert programming. Whether you're building muscle
+                equipment and expert programming. Whether you&apos;re building muscle
                 or breaking PRs, we help you push past limits. Train like an
                 athlete with top-tier equipment and expert programming. Whether
-                you're building muscle or breaking PRs, we help you push past
+                you&apos;re building muscle or breaking PRs, we help you push past
                 limits.
               </p>
               <button className="font-mono text-start ml-4 cursor-pointer">
@@ -35,18 +37,18 @@ export default function TrainHard() {
           </div>
         </div>
         <div className="grid grid-cols-3">
-          <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b bprder-black border-r">
-            <h2 className="font-sans text-3xl font-bold mb-">
+          <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b border-black border-r">
+            <h2 className="font-anek-tamil text-[44px] leading-[95%] tracking-[-0.03em] ">
               GUIDED BY EXPERTS
             </h2>
             <p className="font-sans flex flex-col gap-5 text-sm">
               We believe in creating a positive environment where you can
-              thrive. We're here to help you achieve your goals and unlock your
+              thrive. We&apos;re here to help you achieve your goals and unlock your
               full potential.
             </p>
           </div>
           <div className="bg-[#E9ECFF] text-black flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b bprder-black">
-            <h2 className="font-sans text-3xl font-bold mb-">
+            <h2 className="font-anek-tamil text-[44px] leading-[95%] tracking-[-0.03em]">
               DYNAMIC OPEN GYM
             </h2>
             <p className="font-sans flex flex-col gap-5 text-sm">
@@ -56,7 +58,7 @@ export default function TrainHard() {
             </p>
           </div>
           <div>
-            <Image src={'zal2.svg'} alt='' width={426} height={479}/>
+            <Image src={zal2} alt=''/>
           </div>
         </div>
       </div>
