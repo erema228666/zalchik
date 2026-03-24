@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import { Anek_Tamil } from 'next/font/google';
+import Podval from "./components/podval";
 
 const anekTamil = Anek_Tamil({
   subsets: ['latin'],
@@ -41,6 +42,7 @@ export default function RootLayout({
             {children}
           </div>
         </div>
+        <Podval/>
       </body>
     </html>
   );
