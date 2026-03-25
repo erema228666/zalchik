@@ -1,6 +1,7 @@
 
 import Image from "next/image"
 import logo from "../../public/logo.svg"
+import { AiOutlinePlus } from "react-icons/ai";
 
 export default function Header(){
     return (
@@ -9,11 +10,12 @@ export default function Header(){
                 <Image src={logo} alt=""></Image>
                 <span className="font-bold text-[20px] text-black font-sans leading-tight tracking-tight">PrimalTraining</span>
             </div>
-            <div className="flex gap-15 items-center text-[15px] text-black font-mono">
+            <div className="md:flex hidden gap-15 items-center text-[15px] text-black font-mono">
                 <span>HOME</span>
                 <span>ABOUT</span>
                 <button className="py-3 px-4 bg-[#808CFD] hover:bg-black hover:text-white transition-colors duration-300 rounded-lg">RESERVE YOUR SPOT</button>
             </div>
+            <AiOutlinePlus className="flex md:hidden size-8"/>
         </div>
     )
 }
