@@ -6,7 +6,7 @@ export default function TrainHard() {
   return (
     <div>
       <div className="flex bg-white font-anek-tamil font-extrabold lg:text-[116px] md:text-[71px] text-[37px] leading-[110%] tracking-[-0.05em] uppercase py-6 border-b">
-        <h1 className=" pl-4">
+        <h1 className="pl-5">
           TRAIN HARD. <span className="text-[#808dfd]">LIVE BETTER</span>
         </h1>
       </div>
