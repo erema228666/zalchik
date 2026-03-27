@@ -33,7 +33,7 @@ export default function JoinTheCommunity() {
             <Image src={zal3} alt="" className='object-cover'/>
           </div>
         </div>
-        <div className='bg-[#808dfd] flex flex-col items-center py-40 text-[17px] gap-4'>
+        <div className='bg-[#808dfd] flex flex-col items-center py-40 text-[17px] gap-3'>
           <p className='font-sans'>WHAT WE BELIEVE IN</p>
           <h2 className='font-anek-tamil md:text-[57px] text-[44px] font-bold text-center'>JOIN THE PRIMAL TRIBE TODAY!</h2>
           <button className='bg-[#E9ECFF] px-4 rounded-lg py-2 cursor-pointer'>RESERVE YOUR SPOT</button>
