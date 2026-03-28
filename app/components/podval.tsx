@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Podval() {
     return (
-        <div className="flex flex-col  bg-[#E9ECFF] px-5 py-7 pb-13 text-black">
+        <div className="flex flex-col  bg-[#E9ECFF] px-5 py-7 pb-13 text-black border-t">
             <div className="flex flex-col md:gap-42 gap-20 w-full items-center">
                 <div className="flex flex-col md:flex-row justify-between lg:max-w-[1280px] w-full gap-7 md:gap-0">
                     <Image src={logo} alt="" className="w-[230px] h-[136px]"></Image>

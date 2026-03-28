@@ -2,6 +2,8 @@ import Image from 'next/image';
 import about1 from '../../public/about1.svg';
 import about2 from '../../public/about2.svg';
 import about3 from '../../public/about3.svg';
+import about3_md from '../../public/about3_md_mob.svg';
+import about3_mob from '../../public/about3_mob.svg';
 export default function AboutUs() {
   return (
     <div>
@@ -9,16 +11,17 @@ export default function AboutUs() {
         <h1 className="pl-5">ABOUT US</h1>
       </div>
       <div className="">
-        <div className="md:grid md:grid-cols-3 flex flex-col">
-          <div className="col-span-2 justify-between flex flex-col bg-[#808CFD] py-8 px-5">
-            <h2 className="font-anek-tamil lg:text-[45px]  max-w-2xl md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
+        <div className="lg:grid lg:grid-cols-3 md:grid md:grid-cols-2 flex flex-col">
+          <Image src={about1} alt="" className="w-full h-[225px] object-cover md:hidden" />
+          <div className="lg:col-span-2 justify-between flex flex-col bg-[#808CFD] py-8 px-5 gap-14 md:gap-0">
+            <h2 className="font-anek-tamil lg:text-[45px] text-[28px]  max-w-2xl md:text-[36px] leading-[91%] tracking-[-0.03em] font-bold">
               TAP INTO YOUR PRIMAL POWER. FORGE A STRONGER YOU.
             </h2>
             <div className="font-sans flex flex-col gap-2">
-              <p className="font-anek-tamil text-[22px] leading-[95%] tracking-[-0.03em] font-bold">
+              <p className="font-anek-tamil text-[22px] leading-[131%] tracking-[-0.03em] font-bold">
                 OUR VISION
               </p>
-              <p className="text-[17px]">
+              <p className="lg:text-[17px] text-[15px] tracking-[0.01em] leading-[131%]">
                 Primal Training is committed to delivering a training experience
                 rooted in raw strength, functional fitness, and unwavering
                 community support. We empower our members to tap into their
@@ -28,18 +31,16 @@ export default function AboutUs() {
             </div>
           </div>
           <div>
-            <Image src={about1} alt="" className="w-full" />
+            <Image src={about1} alt="" className="w-full md:h-[375px]  object-cover hidden md:flex h-full" />
           </div>
-        </div>
-        <div className="md:grid md:grid-cols-3 flex flex-col">
-          <div className="col-span-2">
-            <Image src={about2} alt="" />
+          <div className="lg:col-span-2">
+            <Image src={about2} alt="" className='w-full md:h-[375px]  h-[225px] object-cover' />
           </div>
-          <div className="justify-between flex flex-col bg-[#E9ECFF] py-8 px-5">
-            <h2 className="font-anek-tamil lg:text-[45px]  max-w-xs md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
+          <div className="justify-between flex flex-col bg-[#E9ECFF] py-8 px-5 gap-10 md:gap-auto">
+            <h2 className="font-anek-tamil lg:text-[45px] text-[28px] max-w-xs md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
               DYNAMIC OPEN GYM
             </h2>
-            <p className="font-sans text-[17px]">
+            <p className="font-sans lg:text-[17px] text-[15px] tracking-[0.01em] leading-[131%]">
               At Primal Training, we strip away the fluff and focus on the
               fundamentals. Our expert coaches guide you through intense,
               functional workouts designed to build raw strength, resilience,
@@ -47,17 +48,22 @@ export default function AboutUs() {
             </p>
           </div>
         </div>
+
+          
       </div>
       <div className="relative ">
-        <p className="left-5 bottom-5 absolute font-anek-tamil text-white lg:text-[45px]  max-w-xl md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
-          WE'VE CREATED A SPACE WHERE YOU CAN RECONNECT WITH YOUR PRIMAL SELF.
+        <p className="left-5 bottom-5 absolute font-anek-tamil text-white lg:text-[45px]  max-w-xl text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
+          WE&apos;VE CREATED A SPACE WHERE YOU CAN RECONNECT WITH YOUR PRIMAL SELF.
         </p>
-        <Image src={about3} alt="" className="w-full" />
+        <Image src={about3} alt="" className="w-full object-cover h-120 hidden lg:flex"/>
+        <Image src={about3_md} alt="" className="w-full object-cover h-[375px] lg:hidden hidden md:flex"/>
+        <Image src={about3_md} alt="" className=" object-cover h-120 md:hidden"/>
+
       </div>
-      <div className='border-b bg-[#E9ECFF] flex flex-col items-center py-40 text-[17px] gap-3'>
+      <div className=' bg-[#E9ECFF] flex flex-col items-center py-40 text-[17px] gap-3'>
           <p className='font-sans'>WHAT WE BELIEVE IN</p>
           <h2 className='font-anek-tamil md:text-[57px] text-[44px] font-bold text-center'>JOIN THE PRIMAL TRIBE TODAY!</h2>
-          <button className='bg-[#808dfd] px-4 rounded-lg py-2 cursor-pointer'>RESERVE YOUR SPOT</button>
+          <button className='bg-[#808dfd] px-4 rounded-lg py-2 cursor-pointer hover:bg-black hover:text-white'>RESERVE YOUR SPOT</button>
         </div>
     </div>
   );
