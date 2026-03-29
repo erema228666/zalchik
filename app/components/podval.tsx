@@ -6,9 +6,9 @@ export default function Podval() {
     return (
         <div className="flex flex-col  bg-[#E9ECFF] px-5 py-7 pb-13 text-black border-t">
             <div className="flex flex-col md:gap-42 gap-20 w-full items-center">
-                <div className="flex flex-col md:flex-row justify-between lg:max-w-[1280px] w-full gap-7 md:gap-0">
+                <div className="lg:flex md:flex justify-between lg:max-w-[1280px] w-full gap-7 md:gap-0">
                     <Image src={logo} alt="" className="w-[230px] h-[136px]"></Image>
-                    <span className="font-sans text-black font-bold text-[52px] -tracking-[0.05em]">PrimalTraining</span>
+                    <span className="font-sans text-black font-bold text-[52px] md: -tracking-[0.05em]">PrimalTraining</span>
                 </div>
                 <div className="flex flex-col md:flex-row justify-between lg:max-w-[1280px] w-full gap-10 md:gap-0">
                     <div className="flex flex-col gap-4">
