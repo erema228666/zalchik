@@ -4,6 +4,7 @@ import about2 from '../../public/about2.svg';
 import about3 from '../../public/about3.svg';
 import about3_md from '../../public/about3_md_mob.svg';
 import about3_mob from '../../public/about3_mob.svg';
+import Link from 'next/link';
 export default function AboutUs() {
   return (
     <div>
@@ -63,7 +64,7 @@ export default function AboutUs() {
       <div className=' bg-[#E9ECFF] flex flex-col items-center py-40 text-[17px] gap-3'>
           <p className='font-sans'>WHAT WE BELIEVE IN</p>
           <h2 className='font-anek-tamil md:text-[57px] text-[44px] font-bold text-center'>JOIN THE PRIMAL TRIBE TODAY!</h2>
-          <button className='bg-[#808dfd] px-4 rounded-lg py-2 cursor-pointer hover:bg-black hover:text-white'>RESERVE YOUR SPOT</button>
+          <Link href="/" className='bg-[#808dfd] px-4 rounded-lg py-2 cursor-pointer hover:bg-black hover:text-white'>RESERVE YOUR SPOT</Link>
         </div>
     </div>
   );

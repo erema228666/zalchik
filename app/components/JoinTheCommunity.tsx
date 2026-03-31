@@ -2,6 +2,7 @@ import Image from 'next/image';
 import zal3 from '../../public/zal3.svg'
 import zal3_mob from '../../public/zal3_mob.svg'
 import zal3_md from '../../public/zal3_md.svg'
+import Link from 'next/link';
 export default function JoinTheCommunity() {
   return (
     <div>
@@ -36,7 +37,7 @@ export default function JoinTheCommunity() {
         <div className='bg-[#808dfd] flex flex-col items-center py-40 text-[17px] gap-3'>
           <p className='font-sans'>WHAT WE BELIEVE IN</p>
           <h2 className='font-anek-tamil md:text-[57px] text-[44px] font-bold text-center'>JOIN THE PRIMAL TRIBE TODAY!</h2>
-          <button className='bg-[#E9ECFF] px-4 rounded-lg py-2 cursor-pointer'>RESERVE YOUR SPOT</button>
+          <Link href='/book' className='bg-[#E9ECFF] px-4 rounded-lg py-2 cursor-pointer'>RESERVE YOUR SPOT</Link>
         </div>
       </div>
     </div>
