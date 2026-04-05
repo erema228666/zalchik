@@ -3,7 +3,6 @@ import about1 from '../../public/about1.svg';
 import about2 from '../../public/about2.svg';
 import about3 from '../../public/about3.svg';
 import about3_md from '../../public/about3_md_mob.svg';
-import about3_mob from '../../public/about3_mob.svg';
 import Link from 'next/link';
 export default function AboutUs() {
   return (
