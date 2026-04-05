@@ -7,6 +7,7 @@ import {
   boolean,
 } from "drizzle-orm/pg-core";
 import { relations } from "drizzle-orm";
+export * from "./auth-schema"
 
 export const ForTheCommited = pgTable("ForTheCommited", {
   text: text("text").notNull(),

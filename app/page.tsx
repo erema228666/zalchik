@@ -1,14 +1,5 @@
-import Image from "next/image";
-import Header from "./components/header";
-import TrainHard from "./components/TrainHard";
-import Podval from "./components/podval";
-import JoinTheCommunity from "./components/JoinTheCommunity";
+import { redirect } from 'next/navigation';
 
-export default function Home() {
-  return (
-    <div className="flex flex-col">
-      <TrainHard/>
-      <JoinTheCommunity/>
-    </div>
-  );
+export default function RootPage() {
+  redirect('/main');
 }
