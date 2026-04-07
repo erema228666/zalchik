@@ -26,7 +26,6 @@ export default function Podval() {
                         <p className="font-anek-tamil text-[22px] tracking-[-0.03em] font-bold">SOCIAL</p>
                         <Link href="" className="text-[14px] font-bold font-mono -tracking-[0.01em]">с бд</Link>
                     </div>
-
                 </div>
             </div>
         </div>

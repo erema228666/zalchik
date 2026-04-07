@@ -13,8 +13,8 @@ export default function Header(){
             </Link>
             <div className="md:flex hidden gap-15 items-center text-[15px] text-black font-mono">
                 <Link href="/" >HOME</Link>
-                <Link href={'/about'}>ABOUT</Link>
-                <Link href="/book" className="py-3 px-4 bg-[#808CFD] hover:bg-black hover:text-white transition-colors duration-300 rounded-lg">RESERVE YOUR SPOT</Link>
+                <Link href={"about"}>ABOUT</Link>
+                <Link href={"book"} className="py-3 px-4 bg-[#808CFD] hover:bg-black hover:text-white transition-colors duration-300 rounded-lg">RESERVE YOUR SPOT</Link>
             </div>
             <AiOutlinePlus className="flex md:hidden size-8"/>
         </div>

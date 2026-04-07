@@ -15,6 +15,13 @@
       "when": 1775380535371,
       "tag": "0001_mature_shockwave",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1775589841293,
+      "tag": "0002_sticky_korg",
+      "breakpoints": true
     }
   ]
 }
