@@ -10,11 +10,11 @@ import { socialSchema } from "@/lib/shared/schemas/socialschema";
 export const socialLinksRouter = new Elysia({ prefix: "/social"})
     .get('/', async() => {
         const socialLinks = await db.query.SocialLinks.findMany();
-        return { success: true, data: socialLinks }
+        return { socialLinks }
     })
     .post('/', async({ body }) => {
         const newSocial = await db.insert(SocialLinks).values(body).returning();
-        return { success: true, data: newSocial };
+        return { newSocial };
     }, {
         body: socialSchema,
     })
