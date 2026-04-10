@@ -4,7 +4,7 @@ import { db } from "@/server/db";
 import { success } from "zod";
 import { SocialLinks } from "@/server/db/schema";
 import z from "zod/v4";
-import { socialSchema } from "@/lib/shared/schemas/edittext";
+import { socialSchema } from "@/lib/shared/schemas/socialschema";
 
 
 export const socialLinksRouter = new Elysia({ prefix: "/social"})
@@ -17,12 +17,10 @@ export const socialLinksRouter = new Elysia({ prefix: "/social"})
         return { success: true, data: newSocial };
     }, {
         body: socialSchema,
-        // hasRole: 'admin'
     })
     .delete("/:id", async ({ params }) => {
         await db.delete(SocialLinks).where(eq(SocialLinks.id, params.id));
         return { success: true };
     }, {
         params: z.object({ id: z.string() }),
-        // hasRole: "admin"
     })

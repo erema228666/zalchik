@@ -1,6 +1,6 @@
 import z from "zod/v4";
 
-export const socialSchema = z.object({
+export const contactSchema = z.object({
     name: z.string().min(1, { message: "Название обязательно" }),
-    link: z.url({ message: "Неверный URL" }),
+    contact: z.string().min(1,{ message: "Неверный URL" }),
 })
