@@ -2,6 +2,7 @@ import Image from 'next/image';
 import zal1 from '../../public/zal1.svg';
 import zal2 from '../../public/zal2.svg';
 import zal2_mob from '../../public/zal2_mob.svg';
+import Link from 'next/link';
 export default function TrainHard() {
   return (
     <div>
@@ -25,9 +26,9 @@ export default function TrainHard() {
                 programming. Whether you&apos;re building muscle or breaking
                 PRs, we help you push past limits.
               </p>
-              <button className="font-mono text-start ml-4 cursor-pointer">
+              <Link href="/about" className="font-mono text-start ml-4 cursor-pointer">
                 ABOUT US
-              </button>
+              </Link>
             </div>
           </div>
           <div className='flex md:hidden'>

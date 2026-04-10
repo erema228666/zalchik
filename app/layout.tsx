@@ -39,7 +39,7 @@ export default function RootLayout({
     >
       <body className="flex flex-col">
         <div className="flex justify-center w-full">
-          <div className="w-full max-w-7xl">
+          <div className="w-full">
             <QueryClientProviderContext>{children}</QueryClientProviderContext>
             <Toaster />
           </div>

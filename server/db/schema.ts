@@ -16,16 +16,20 @@ const commonFields = {
 }
 
 export const ForTheCommited = pgTable('ForTheCommited', {
+    ...commonFields,
   text: text('text').notNull(),
 });
 export const GuidedByExperts = pgTable('GuidedByExperts', {
+    ...commonFields,
   text: text('text').notNull(),
 });
 export const DynamicOpenGym = pgTable('DynamicOpenGym', {
+    ...commonFields,
   text: text('text').notNull(),
 });
 
 export const JoinTheCommunity = pgTable('JoinTheCommunity', {
+    ...commonFields,
   heading: varchar('heading', { length: 50 }).notNull(),
   text: text('text').notNull(),
 });
@@ -37,12 +41,14 @@ export const SocialLinks = pgTable('SocialLinks', {
 });
 
 export const OpeningHours = pgTable('OpeningHours', {
+    ...commonFields,
   day: varchar('day', { length: 50 }).notNull(),
   open: integer('open').notNull(),
   close: integer('close').notNull(),
 });
 
 export const contact = pgTable('contact', {
+    ...commonFields,
   name: varchar('name', { length: 50 }).notNull(),
   contact: text('text').notNull(),
 });
