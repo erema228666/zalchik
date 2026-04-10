@@ -10,11 +10,23 @@ import { contactSchema } from "@/lib/shared/schemas/contactschema";
 export const contactsRouter = new Elysia({ prefix: "/contact"})
     .get('/', async() => {
         const contacts = await db.query.contact.findMany();
-        return { success: true, data: contacts }
+        return { contacts }
     })
+    .put(
+            "/:id",
+            async ({ params, body }) => {
+            return await db.update(contact).set(body).where(eq(contact.id, params.id));
+            },
+            {
+            params: z.object({
+                id: z.string(),
+            }),
+            body: contactSchema,
+            },
+        )
     .post('/', async({ body }) => {
         const newContact = await db.insert(contact).values(body).returning();
-        return { success: true, data: newContact };
+        return { newContact };
     }, {
         body: contactSchema,
     })

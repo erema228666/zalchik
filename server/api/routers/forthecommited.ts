@@ -10,11 +10,23 @@ import { forthecommitedSchema } from "@/lib/shared/schemas/commontexts";
 export const forthecommitedRouter = new Elysia({ prefix: "/forthecommited"})
     .get('/', async() => {
         const forthecommited = await db.query.ForTheCommited.findMany();
-        return { success: true, data: forthecommited }
+        return { forthecommited }
     })
+    .put(
+            "/:id",
+            async ({ params, body }) => {
+            return await db.update(ForTheCommited).set(body).where(eq(ForTheCommited.id, params.id));
+            },
+            {
+            params: z.object({
+                id: z.string(),
+            }),
+            body: forthecommitedSchema,
+            },
+        )
     .post('/', async({ body }) => {
         const newForthecommited = await db.insert(ForTheCommited).values(body).returning();
-        return { success: true, data: newForthecommited };
+        return { newForthecommited };
     }, {
         body: forthecommitedSchema,
     })
