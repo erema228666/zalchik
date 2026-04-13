@@ -5,6 +5,7 @@ import { headers as getHeaders } from "next/headers";
 import { contactsRouter } from "./routers/contact";
 import { forthecommitedRouter } from "./routers/forthecommited";
 import { guidedbyexpertsRouter } from "./routers/guidedbyexperts";
+import { userRouter } from "./routers/user";
 
 export const app = new Elysia({
     name: 'app',
@@ -14,6 +15,7 @@ export const app = new Elysia({
 .use(contactsRouter)
 .use(forthecommitedRouter)
 .use(guidedbyexpertsRouter)
+.use(userRouter)
 
 export type App = typeof app;
 export const api = treaty(app).api

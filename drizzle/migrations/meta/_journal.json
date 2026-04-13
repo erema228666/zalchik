@@ -29,6 +29,27 @@
       "when": 1775816775049,
       "tag": "0003_condemned_machine_man",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1776066006285,
+      "tag": "0004_workable_moonstone",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1776066271577,
+      "tag": "0005_clear_millenium_guard",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1776066456257,
+      "tag": "0006_steady_wildside",
+      "breakpoints": true
     }
   ]
 }
