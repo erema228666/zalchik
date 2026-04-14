@@ -1,30 +1,57 @@
 import Image from "next/image";
 import logo from '../../public/logo.svg'
 import Link from "next/link";
+import { db } from "@/server/db";
+import { SocialLinks } from "@/server/db/schema";
 
-export default function Podval() {
+export default async function Podval() {
+    const contacts = await db.query.contact.findMany();
+    const socials = await db.query.SocialLinks.findMany();
     return (
-        <div className="flex flex-col  bg-[#E9ECFF] px-5 py-7 pb-13 text-black border-t">
+        <div className="flex flex-col bg-[#E9ECFF] px-5 lg:px-30 py-7 pb-13 text-black border-t">
             <div className="flex flex-col md:gap-42 gap-20 w-full items-center">
-                <div className="lg:flex md:flex justify-between lg:max-w-[1280px] w-full gap-7 md:gap-0">
+                <div className="lg:flex md:flex justify-between w-full gap-7 md:gap-0">
                     <Link href="/"><Image src={logo} alt="" className="w-[230px] h-[136px]"></Image></Link>
                     <Link href="/"><span className="font-sans text-black font-bold text-[52px] md: -tracking-[0.05em]">PrimalTraining</span></Link>
                 </div>
-                <div className="flex flex-col md:flex-row justify-between lg:max-w-[1280px] w-full gap-10 md:gap-0">
-                    <div className="flex flex-col gap-4">
-                        <p className="font-anek-tamil text-[22px] tracking-[-0.03em] font-bold">CONTACT</p>
-                        <span className="text-[14px] font-bold font-mono tracking-[0.01em]">с бд</span>
+                <div className="flex md:flex-row justify-between w-full  md:gap-0">
+                    <div className="flex flex-col gap-4 font-anek-tamil">
+                        <p className=" text-[22px] tracking-[-0.03em] font-bold">CONTACT</p>
+                        {contacts.map((contact) => (
+                            <span key={contact.id} className="font-bold leading-[0.3] tracking-[0.01em]">
+                                {contact.name}: {contact.contact}
+                            </span>
+                        ))}
                     </div>
-                    <div className="flex flex-col gap-4">
-                        <p className="font-anek-tamil text-[22px] tracking-[-0.03em] font-bold">OPENING HOURS</p>
-                        <div className="flex text-[14px] font-bold font-mono -tracking-[0.01em] w-[247px] justify-between">
-                            <span>MON – FRI</span>
-                            <span>5:00 – 23:00</span>
+                    <div className="flex flex-col gap-4 font-anek-tamil">
+                        <p className="text-[22px] tracking-[-0.03em] font-bold">OPENING HOURS</p>
+                        <div className="flex flex-col font-bold w-3xs ">
+                            <div className="flex justify-between w-full">
+                                <p>MON – FRI</p>
+                                <p>5:00 – 23:00</p>    
+                            </div>
+                            <div className="flex justify-between w-full">
+                                <p>SATURDAYS</p>
+                                <p>8:00 – 16:00</p>    
+                            </div>
+                            <div className="flex justify-between w-full">
+                                <p>SUNDAYS</p>
+                                <p>8:00 – 13:00</p>    
+                            </div>
+                            <div className="flex justify-between w-full">
+                                <p>HOLIDAYS</p>
+                                <p>8:00 – 16:00</p>    
+                            </div>
+                            
                         </div>
                     </div>
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 font-anek-tamil">
                         <p className="font-anek-tamil text-[22px] tracking-[-0.03em] font-bold">SOCIAL</p>
-                        <Link href="" className="text-[14px] font-bold font-mono -tracking-[0.01em]">с бд</Link>
+                        {socials.map((SocialLinks) => (
+                            <Link href={SocialLinks.link} key={SocialLinks.id} className="underline leading-[0.3] font-bold -tracking-[0.01em]">
+                                {SocialLinks.name}
+                            </Link>
+                        ))}
                     </div>
                 </div>
             </div>

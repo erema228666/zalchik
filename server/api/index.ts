@@ -6,6 +6,9 @@ import { contactsRouter } from "./routers/contact";
 import { forthecommitedRouter } from "./routers/forthecommited";
 import { guidedbyexpertsRouter } from "./routers/guidedbyexperts";
 import { userRouter } from "./routers/user";
+import { dynamicopengymRouter } from "./routers/dynamicopengym";
+import { aboutusdynamicRouter } from "./routers/aboutusdynamic";
+import { aboutustapintoRouter } from "./routers/aboutustapinto";
 
 export const app = new Elysia({
     name: 'app',
@@ -15,6 +18,9 @@ export const app = new Elysia({
 .use(contactsRouter)
 .use(forthecommitedRouter)
 .use(guidedbyexpertsRouter)
+.use(dynamicopengymRouter)
+.use(aboutusdynamicRouter)
+.use(aboutustapintoRouter)
 .use(userRouter)
 
 export type App = typeof app;

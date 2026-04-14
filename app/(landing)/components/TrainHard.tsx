@@ -3,7 +3,12 @@ import zal1 from '../../public/zal1.svg';
 import zal2 from '../../public/zal2.svg';
 import zal2_mob from '../../public/zal2_mob.svg';
 import Link from 'next/link';
-export default function TrainHard() {
+import { db } from '@/server/db';
+import { ForTheCommited } from '@/server/db/schema';
+export default async function TrainHard() {
+  const forTheCommitedText = await db.query.ForTheCommited.findMany();
+  const guidedByExpertsText = await db.query.GuidedByExperts.findMany();
+  const dynamicOpenGymText = await db.query.DynamicOpenGym.findMany();
   return (
     <div>
       <div className="flex bg-white font-anek-tamil font-extrabold lg:text-[116px] md:text-[71px] text-[37px] leading-[110%] tracking-[-0.05em] uppercase py-6 border-b">
@@ -21,11 +26,11 @@ export default function TrainHard() {
               FOR THE COMMITTED
             </h2>
             <div className="font-sans flex flex-col gap-5 text-sm">
-              <p>
-                Train like an athlete with top-tier equipment and expert
-                programming. Whether you&apos;re building muscle or breaking
-                PRs, we help you push past limits.
-              </p>
+              {forTheCommitedText.map((ForTheCommited) => (
+                <p key={ForTheCommited.id}>
+                  {ForTheCommited.text}
+                </p>
+              ))}
               <Link href="/about" className="font-mono text-start ml-4 cursor-pointer">
                 ABOUT US
               </Link>
@@ -38,21 +43,21 @@ export default function TrainHard() {
             <h2 className="font-anek-tamil lg:text-[45px] md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
               GUIDED BY EXPERTS
             </h2>
-            <p className="font-sans flex flex-col gap-5 text-sm">
-              We believe in creating a positive environment where you can
-              thrive. We&apos;re here to help you achieve your goals and unlock
-              your full potential.
-            </p>
+            {guidedByExpertsText.map((GuidedByExperts) => (
+                <p className='font-sans flex flex-col gap-5 text-sm' key={GuidedByExperts.id}>
+                  {GuidedByExperts.text}
+                </p>
+              ))}
           </div>
           <div className="bg-[#E9ECFF] flex flex-col text-start px-5 pt-5 pb-14 justify-between border-b">
             <h2 className="font-anek-tamil lg:text-[45px] md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
               DYNAMIC OPEN GYM
             </h2>
-            <p className="font-sans flex flex-col gap-5 text-sm">
-              Our facility is the optimal environment for strength training and
-              performance, fully equipped with top-of-the-line tools, ample
-              training areas, and a focus on functional movement
-            </p>
+            {dynamicOpenGymText.map((DynamicOpenGym) => (
+                <p className='font-sans flex flex-col gap-5 text-sm' key={DynamicOpenGym.id}>
+                  {DynamicOpenGym.text}
+                </p>
+              ))}
           </div>
           <div className='md:flex hidden'>
             <Image src={zal2} alt="" />

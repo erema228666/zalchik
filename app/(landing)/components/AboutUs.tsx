@@ -4,7 +4,10 @@ import about2 from '../../public/about2.svg';
 import about3 from '../../public/about3.svg';
 import about3_md from '../../public/about3_md_mob.svg';
 import Link from 'next/link';
-export default function AboutUs() {
+import { db } from '@/server/db';
+export default async function AboutUs() {
+  const tapIntoText =  await db.query.AboutUsTapInto.findMany();
+  const dynamicText =  await db.query.AboutUsDynamic.findMany();
   return (
     <div>
       <div className="flex bg-white font-anek-tamil font-extrabold lg:text-[116px] md:text-[71px] text-[37px] leading-[110%] tracking-[-0.05em] uppercase py-6 border-b">
@@ -21,13 +24,11 @@ export default function AboutUs() {
               <p className="font-anek-tamil text-[22px] leading-[131%] tracking-[-0.03em] font-bold">
                 OUR VISION
               </p>
-              <p className="lg:text-[17px] text-[15px] tracking-[0.01em] leading-[131%]">
-                Primal Training is committed to delivering a training experience
-                rooted in raw strength, functional fitness, and unwavering
-                community support. We empower our members to tap into their
-                primal power, achieve their goals, and live a life of strength,
-                resilience, and unwavering determination.
-              </p>
+              {tapIntoText.map((AboutUsTapInto) => (
+                <p className='text-[15px] tracking-[0.01em] leading-[131%]' key={AboutUsTapInto.id}>
+                  {AboutUsTapInto.text}
+                </p>
+              ))}
             </div>
           </div>
           <div>
@@ -36,16 +37,15 @@ export default function AboutUs() {
           <div className="lg:col-span-2">
             <Image src={about2} alt="" className='w-full md:h-[375px]  h-[225px] object-cover' />
           </div>
-          <div className="justify-between flex flex-col bg-[#E9ECFF] py-8 px-5 gap-10 md:gap-auto">
+          <div className="justify-between flex flex-col bg-[#E9ECFF] py-8 px-5 gap-10 md:gap-auto font-sans">
             <h2 className="font-anek-tamil lg:text-[45px] text-[28px] max-w-xs md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
               DYNAMIC OPEN GYM
             </h2>
-            <p className="font-sans lg:text-[17px] text-[15px] tracking-[0.01em] leading-[131%]">
-              At Primal Training, we strip away the fluff and focus on the
-              fundamentals. Our expert coaches guide you through intense,
-              functional workouts designed to build raw strength, resilience,
-              and a body capable of anything.
-            </p>
+            {dynamicText.map((AboutUsDynamic) => (
+                <p className='text-[15px] tracking-[0.01em] leading-[131%]' key={AboutUsDynamic.id}>
+                  {AboutUsDynamic.text}
+                </p>
+              ))}
           </div>
         </div>
 

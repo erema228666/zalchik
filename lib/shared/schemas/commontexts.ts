@@ -11,3 +11,11 @@ export const guidedbyexpertsSchema = z.object({
 export const dynamicopengymSchema = z.object({
     text: z.string().min(1, { message: "Это поле не может быть пустым"})
 })
+
+export const aboutustapintoSchema = z.object({
+    text: z.string().min(1, { message: "Это поле не может быть пустым"})
+})
+
+export const aboutusdynamicSchema = z.object({
+    text: z.string().min(1, { message: "Это поле не может быть пустым"})
+})

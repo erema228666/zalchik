@@ -28,6 +28,16 @@ export const DynamicOpenGym = pgTable('DynamicOpenGym', {
   text: text('text').notNull(),
 });
 
+
+export const AboutUsTapInto = pgTable('AboutUsTapInto', {
+  ...commonFields,
+  text: text('text').notNull(),
+}) 
+export const AboutUsDynamic = pgTable('AboutUsDynamic', {
+  ...commonFields,
+  text: text('text').notNull(),
+})
+
 export const JoinTheCommunity = pgTable('JoinTheCommunity', {
     ...commonFields,
   heading: varchar('heading', { length: 50 }).notNull(),

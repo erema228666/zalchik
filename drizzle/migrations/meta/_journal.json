@@ -50,6 +50,13 @@
       "when": 1776066456257,
       "tag": "0006_steady_wildside",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1776168948756,
+      "tag": "0007_serious_patriot",
+      "breakpoints": true
     }
   ]
 }
