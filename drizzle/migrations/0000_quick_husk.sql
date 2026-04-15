@@ -1,3 +1,71 @@
+CREATE TABLE "AboutUsDynamic" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "AboutUsTapInto" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "DynamicOpenGym" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "ForTheCommited" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "GuidedByExperts" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "JoinTheCommunity" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"heading" varchar(50) NOT NULL,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "OpeningHours" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"day" varchar(50) NOT NULL,
+	"open" integer NOT NULL,
+	"close" integer NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "SocialLinks" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"name" varchar(50) NOT NULL,
+	"url" text NOT NULL
+);
+--> statement-breakpoint
+CREATE TABLE "contact" (
+	"id" varchar(255) PRIMARY KEY NOT NULL,
+	"created_at" timestamp DEFAULT now(),
+	"deleted_at" timestamp,
+	"name" varchar(50) NOT NULL,
+	"text" text NOT NULL
+);
+--> statement-breakpoint
 CREATE TABLE "account" (
 	"id" text PRIMARY KEY NOT NULL,
 	"account_id" text NOT NULL,
@@ -34,6 +102,7 @@ CREATE TABLE "user" (
 	"image" text,
 	"created_at" timestamp DEFAULT now() NOT NULL,
 	"updated_at" timestamp DEFAULT now() NOT NULL,
+	"role" text DEFAULT 'user' NOT NULL,
 	CONSTRAINT "user_email_unique" UNIQUE("email")
 );
 --> statement-breakpoint

@@ -8,7 +8,7 @@ export default function BookSession() {
       </div>
       <div>
         <div className="md:grid md:grid-cols-3 flex flex-col">
-          <div className="bg-[#E9ECFF] flex flex-col text-start px-5 pt-7 pb-7 justify-between border-b md:border-r">
+          <div className="bg-[#E9ECFF] flex flex-col text-start px-5 pt-7 pb-7 justify-between border-b md:border-x">
             <h2 className="font-anek-tamil mb-20 lg:text-[45px] md:text-[36px] leading-[95%] tracking-[-0.03em] font-bold">
               STRENTGH
             </h2>

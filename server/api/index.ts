@@ -9,6 +9,7 @@ import { userRouter } from "./routers/user";
 import { dynamicopengymRouter } from "./routers/dynamicopengym";
 import { aboutusdynamicRouter } from "./routers/aboutusdynamic";
 import { aboutustapintoRouter } from "./routers/aboutustapinto";
+import { openinghoursRouter } from "./routers/openhours";
 
 export const app = new Elysia({
     name: 'app',
@@ -22,6 +23,7 @@ export const app = new Elysia({
 .use(aboutusdynamicRouter)
 .use(aboutustapintoRouter)
 .use(userRouter)
+.use(openinghoursRouter)
 
 export type App = typeof app;
 export const api = treaty(app).api
