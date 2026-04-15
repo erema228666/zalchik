@@ -7,14 +7,15 @@ import { SocialLinks } from "@/server/db/schema";
 export default async function Podval() {
     const contacts = await db.query.contact.findMany();
     const socials = await db.query.SocialLinks.findMany();
+    const openhours = await db.query.OpeningHours.findMany();
     return (
         <div className="flex flex-col bg-[#E9ECFF] px-5 lg:px-30 py-7 pb-13 text-black border-t">
-            <div className="flex flex-col md:gap-42 gap-20 w-full items-center">
+            <div className="flex flex-col md:gap-30 gap-20 w-full items-center">
                 <div className="lg:flex md:flex justify-between w-full gap-7 md:gap-0">
                     <Link href="/"><Image src={logo} alt="" className="w-[230px] h-[136px]"></Image></Link>
                     <Link href="/"><span className="font-sans text-black font-bold text-[52px] md: -tracking-[0.05em]">PrimalTraining</span></Link>
                 </div>
-                <div className="flex md:flex-row justify-between w-full  md:gap-0">
+                <div className="flex md:flex-row md:justify-between w-full flex-col gap-10 md:gap-0">
                     <div className="flex flex-col gap-4 font-anek-tamil">
                         <p className=" text-[22px] tracking-[-0.03em] font-bold">CONTACT</p>
                         {contacts.map((contact) => (
@@ -25,23 +26,13 @@ export default async function Podval() {
                     </div>
                     <div className="flex flex-col gap-4 font-anek-tamil">
                         <p className="text-[22px] tracking-[-0.03em] font-bold">OPENING HOURS</p>
-                        <div className="flex flex-col font-bold w-3xs ">
-                            <div className="flex justify-between w-full">
-                                <p>MON – FRI</p>
-                                <p>5:00 – 23:00</p>    
-                            </div>
-                            <div className="flex justify-between w-full">
-                                <p>SATURDAYS</p>
-                                <p>8:00 – 16:00</p>    
-                            </div>
-                            <div className="flex justify-between w-full">
-                                <p>SUNDAYS</p>
-                                <p>8:00 – 13:00</p>    
-                            </div>
-                            <div className="flex justify-between w-full">
-                                <p>HOLIDAYS</p>
-                                <p>8:00 – 16:00</p>    
-                            </div>
+                        <div className="flex flex-col font-bold -tracking-[0.01em] w-[247px] justify-between">
+                            {openhours.map((x) => (
+                                <div key={x.id} className="flex justify-between w-full">
+                                    <p>{x.day}</p>
+                                    <p>{x.open}:00 - {x.close}:00</p>
+                                </div>
+                            ))}
                             
                         </div>
                     </div>
