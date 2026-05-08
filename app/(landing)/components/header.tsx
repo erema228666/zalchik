@@ -1,8 +1,11 @@
-
+'use client'
 import Image from "next/image"
 import logo from "../../public/logo.svg"
 import { AiOutlinePlus } from "react-icons/ai";
 import Link from "next/link";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Button } from "@/components/ui/button";
+import { Menu } from "lucide-react";
 
 export default function Header(){
     return (
@@ -16,7 +19,36 @@ export default function Header(){
                 <Link href={"about"}>ABOUT</Link>
                 <Link href={"book"} className="py-3 px-4 bg-[#808CFD] hover:bg-black hover:text-white transition-colors duration-300 rounded-lg">RESERVE YOUR SPOT</Link>
             </div>
-            <AiOutlinePlus className="flex md:hidden size-8"/>
+            <div className="flex md:hidden">
+                <Sheet >
+                    <SheetTrigger asChild>
+                        <Button
+                        variant="ghost"
+                        size="icon"
+                        className="text-black"
+                        >
+                        <Menu />
+                        </Button>
+                    </SheetTrigger>
+
+                    <SheetContent
+                        side="right"
+                        className="bg-[#E9ECFF] border-black/70 w-40 p-4 text-black"
+                    >
+                        <SheetHeader>
+                        <SheetTitle className="text-black">Навигация</SheetTitle>
+                        </SheetHeader>
+
+                        <div className="mt-6 flex flex-col gap-6 p-4">
+                            <Link href="/" >HOME</Link>
+                            <Link href={"about"}>ABOUT</Link>
+                            <Link href={"book"}>RESERVE YOUR SPOT</Link>
+                        </div>
+                    </SheetContent>
+                </Sheet>
+                            
+            </div>
+  
         </div>
     )
 }
