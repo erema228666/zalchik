@@ -34,7 +34,7 @@ export default async function Layout({children}: {children: React.ReactNode}) {
 }
 
 const links = [
-  { label: "For the commited", href: "/admin/forthecommited" },
+  { label: "For the commited", href: "/admin/forTheCommited" },
   { label: "Guided by experts", href: "/admin/guidedbyexperts" },
   { label: "Dynamic open gym", href: "/admin/dynamicopengym" },
   { label: "Open hours", href: "/admin/openhours" },
