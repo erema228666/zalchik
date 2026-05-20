@@ -5,22 +5,8 @@
     {
       "idx": 0,
       "version": "7",
-      "when": 1776268277111,
-      "tag": "0000_quick_husk",
-      "breakpoints": true
-    },
-    {
-      "idx": 1,
-      "version": "7",
-      "when": 1776268526398,
-      "tag": "0001_free_mephistopheles",
-      "breakpoints": true
-    },
-    {
-      "idx": 2,
-      "version": "7",
-      "when": 1776268697756,
-      "tag": "0002_sticky_menace",
+      "when": 1779122845358,
+      "tag": "0000_omniscient_solo",
       "breakpoints": true
     }
   ]

@@ -6,9 +6,18 @@ import z from 'zod';
 import { authClient } from '../../../lib/client/auth-client';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
+import { useState } from 'react';
+import { FiEyeOff } from "react-icons/fi";
+import { FiEye } from "react-icons/fi";
+
 
 export default function SignIn() {
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const toggleShowPassword = () => {
+    setShowPassword(!showPassword);
+  };
 
   const formSchema = z.object({
     email: z.email('Invalid email'),
@@ -31,6 +40,7 @@ export default function SignIn() {
       router.push('/');
       router.refresh();
     } else if (result.error) {
+      toast.error('Неверно введены данные');
       console.error('Login error:', result.error);
     }
   };
@@ -44,18 +54,26 @@ export default function SignIn() {
         <input
           {...form.register('email')}
           type="text"
-          className="flex text-black bg-gray-200 border p-4 text-[14px] rounded-xl"
+          className="flex text-black bg-gray-200 border p-4 text-[14px] rounded-xl w-60 focus:outline-0"
           placeholder="Почта"
         />
-        <input
-          {...form.register('password')}
-          type="text"
-          className="flex text-black bg-gray-200 border p-4 text-[14px] rounded-xl"
-          placeholder="Пароль"
-        />
+        <div className='flex text-black bg-gray-200 border p-4  rounded-xl w-60'>
+          <input
+            {...form.register('password')}
+            type={showPassword ? 'text' : 'password'}
+            className="flex w-48 focus:outline-0"
+            placeholder="Пароль"
+          />
+          <button
+          type='button'
+          className='text-[18px]'
+          onClick={toggleShowPassword}>
+            {showPassword ? <FiEyeOff /> : <FiEye />}
+          </button>
+        </div>
         <button
           type="submit"
-          className="p-4 bg-indigo-700 hover:bg-indigo-600 rounded-2xl text-white flex items-center justify-center"
+          className="p-4 bg-indigo-700 hover:bg-indigo-600 rounded-2xl text-white flex items-center justify-center w-60"
         >
           Войти
         </button>

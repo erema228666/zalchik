@@ -16,6 +16,7 @@ export default async function Layout({children}: {children: React.ReactNode}) {
         redirect("/")
     }
 
+
     return (
     <main className="flex flex-row w-screen h-screen notranslate">
       <div className="hidden md:block">
@@ -46,7 +47,7 @@ const links = [
 
 function AdminSideBar() {
   return (
-    <div className="bg-black/40 text-white p-10 h-screen w-64 border-r border-black/70 flex flex-col justify-between">
+    <div className="bg-indigo-700/80 text-white p-10 h-screen w-64 border-r border-black/70 flex flex-col justify-between">
       <div className="flex flex-col gap-6">
         {links.map((link) => (
           <Link
