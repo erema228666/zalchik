@@ -6,8 +6,16 @@ import { useForm } from 'react-hook-form';
 import { useRouter } from 'next/navigation';
 import { toast } from 'sonner';
 import z from 'zod/v4';
+import { useState } from 'react';
+import { FiEyeOff } from "react-icons/fi";
+import { FiEye } from "react-icons/fi";
 
 export default function SignUp() {
+  const [showPassword, setShowPassword] = useState(false);
+  
+    const toggleShowPassword = () => {
+      setShowPassword(!showPassword);
+    };
   const router = useRouter();
   const formSchema = z.object({
     email: z.email('invalid email'),
@@ -54,12 +62,20 @@ export default function SignUp() {
           className="flex text-black bg-gray-200 border p-4 text-[14px] rounded-xl"
           placeholder="Имя"
         />
-        <input
-          {...form.register('password')}
-          type="text"
-          className="flex text-black bg-gray-200 border p-4 text-[14px] rounded-xl"
-          placeholder="Пароль"
-        />
+        <div className='flex text-black bg-gray-200 border p-4  rounded-xl w-60'>
+                  <input
+                    {...form.register('password')}
+                    type={showPassword ? 'text' : 'password'}
+                    className="flex w-48 focus:outline-0"
+                    placeholder="Пароль"
+                  />
+                  <button
+                  type='button'
+                  className='text-[18px]'
+                  onClick={toggleShowPassword}>
+                    {showPassword ? <FiEyeOff /> : <FiEye />}
+                  </button>
+                </div>
         <button
           type="submit"
           className="p-4 bg-indigo-700 hover:bg-indigo-600 rounded-2xl text-white flex items-center justify-center"

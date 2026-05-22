@@ -7,7 +7,7 @@ export default async function GuidedbyexpertsPage() {
     
     return (
         <div className="p-6">
-            <h1 className="text-2xl font-bold mb-6">For the commited text editor</h1>
+            <h1 className="text-2xl font-bold mb-6">Guided by experts editor</h1>
             <UpdateText guidedbyexperts={guidedbyexperts} />
         </div>
     );

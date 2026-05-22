@@ -49,7 +49,7 @@ export default function SignIn() {
     <div className="w-screen h-screen bg-white flex flex-col justify-center items-center gap-6">
       <form
         onSubmit={form.handleSubmit(onFormSubmit)}
-        className="flex flex-col gap-4 w-62.5"
+        className="flex flex-col gap-4 w-60"
       >
         <input
           {...form.register('email')}
